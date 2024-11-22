@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 85a2f67f-9e65-4efc-8c73-ee92858f291a # Realtors
+handle: realtors
+maxAuthors: 1
+name: Realtors
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  f6eaef1f-2f88-4856-8eee-c5ae9620f572: # Craft Template
+    enabledByDefault: true
+    hasUrls: true
+    template: realtors/_entry.twig
+    uriFormat: 'realtors/{slug}'
+type: channel

@@ -1,0 +1,24 @@
+columnSuffix: null
+handle: realtor
+instructions: null
+name: Realtor
+searchable: false
+settings:
+  maxLength: 255
+  showLabelField: false
+  showTargetField: false
+  typeSettings:
+    __assoc__:
+      -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              -
+                - 'section:f961de11-bb5a-455e-993a-dd5d958a7976' # Realtors
+  types:
+    - entry
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Link

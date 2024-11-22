@@ -91,15 +91,17 @@
 						</div>
 					</div>
 				{% endfor %}
+
+				{% set realtor = craft.entries.section('realtors').relatedTo(entry).one() %}
 				<div class="row u-background-grey c-detail__realtor">
 					<div class="col-9 p-3 p-sm-4 c-detail__realtor-info">
 						<p>Your expert</p>
-						<h3>Brent Heirman</h3>
+						<h3>{{realtor.title}}</h3>
 						<p>
-							<a href="mailto:brent.heirman@justhome.be">brent.heirman@justhome.be</a>
+							<a href="mailto:b{{realtor.email}}">{{realtor.email}}</a>
 						</p>
 					</div>
-					<img class="col-3 c-detail__realtor-img" src="{{url('img/RealEstateAgent-two.jpeg')}}" alt="">
+					<img class="col-3 c-detail__realtor-img" src="{{realtor.image.one().getUrl()}}" alt="{{realtor.title}}">
 				</div>
 			</div>
 		</div>

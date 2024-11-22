@@ -158,11 +158,7 @@
 						<img src="{{url('img/icons/quote.svg')}}" alt="" class="c-review-card__img">
 					</div>
 					<p>
-						Searches for multiplexes, property comparisons,
-																																																																																																																																																																																																																																																			and the loan estimator. Works great. Lorem
-																																																																																																																																																																																																																																																			ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																																																																																			sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																																																																																			dores.
+						Searches for multiplexes, property comparisons, and the loan estimator. Works great. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dores.
 					</p>
 
 				</div>
@@ -177,11 +173,7 @@
 						<img src="{{url('img/icons/quote.svg')}}" alt="" class="c-review-card__img">
 					</div>
 					<p>
-						Searches for multiplexes, property comparisons,
-																																																																																																																																																																																																																																																			and the loan estimator. Works great. Lorem
-																																																																																																																																																																																																																																																			ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																																																																																			sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																																																																																			dores.
+						Searches for multiplexes, property comparisons, and the loan estimator. Works great. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dores.
 					</p>
 
 				</div>
@@ -196,11 +188,7 @@
 						<img src="{{url('img/icons/quote.svg')}}" alt="" class="c-review-card__img">
 					</div>
 					<p>
-						Searches for multiplexes, property comparisons,
-																																																																																																																																																																																																																																																			and the loan estimator. Works great. Lorem
-																																																																																																																																																																																																																																																			ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																																																																																			sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																																																																																			dores.
+						Searches for multiplexes, property comparisons, and the loan estimator. Works great. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dores.
 					</p>
 
 				</div>
@@ -213,58 +201,26 @@
 	<div class="container">
 		<h2 class="pt-5">Meet our team</h2>
 		<p class="text-center">These realtors are ready to help you!</p>
-		<div
-			class="row c-section__content g-3  justify-content-center">
-			<!-- realtor card -->
-			<div class="col-12 col-sm-3 col-lg-2">
-				<div class="c-realtor">
+		<div {% set realtors = craft.entries.section('realtors').all()%} class="row c-section__content g-3  justify-content-center">
+			{% for realtor in realtors %}
+				<!-- realtor card -->
+				<div class="col-12 col-sm-3 col-lg-2">
+					<div class="c-realtor">
 
-					<img src="{{url('img/RealEstateAgent-one.jpeg')}}" alt="" class="c-realtor__image">
+						<img src="{{realtor.image.one().getUrl()}}" alt="{{realtor.title}}" class="c-realtor__image">
 
-					<div>
-						<h4 class="c-realtor__name">Cameron Williamson</h4>
-						<p>Region East Flanders</p>
+						<div>
+							<h4 class="c-realtor__name">{{realtor.title}}</h4>
+							{% set realtorRegion = craft.entries.section('locations').relatedTo(realtor).one() %}
+							<p>Region
+								{{realtorRegion.title}}</p>
+						</div>
+
 					</div>
-
 				</div>
-			</div>
-			<!-- realtor card -->
-			<div class="col-12 col-sm-3 col-lg-2">
-				<div class="c-realtor">
+				{%endfor%}
 
-					<img src="{{url('img/RealEstateAgent-one.jpeg')}}" alt="" class="c-realtor__image">
-					<div>
-						<h4 class="c-realtor__name">Cameron Williamson</h4>
-						<p>Region East Flanders</p>
-					</div>
-
-				</div>
-			</div>
-			<!-- realtor card -->
-			<div class="col-12 col-sm-3 col-lg-2">
-				<div class="c-realtor">
-
-					<img src="{{url('img/RealEstateAgent-one.jpeg')}}" alt="" class="c-realtor__image">
-					<div>
-						<h4 class="c-realtor__name">Cameron Williamson</h4>
-						<p>Region East Flanders</p>
-					</div>
-
-				</div>
-			</div>
-			<!-- realtor card -->
-			<div class="col-12 col-sm-3 col-lg-2">
-				<div class="c-realtor">
-
-					<img src="{{url('img/RealEstateAgent-one.jpeg')}}" alt="" class="c-realtor__image">
-					<div>
-						<h4 class="c-realtor__name">Cameron Williamson</h4>
-						<p>Region East Flanders</p>
-					</div>
-
-				</div>
 			</div>
 		</div>
-	</div>
 
-{% endblock %}
+	{% endblock %}
