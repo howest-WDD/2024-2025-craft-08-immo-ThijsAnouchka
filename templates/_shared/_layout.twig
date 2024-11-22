@@ -15,21 +15,20 @@
 	<body>
 		<div class="d-flex flex-column flex-md-row justify-content-between col-10 offset-1 align-items-center p-3 px-md-4  bg-white">
 			<h1 class="my-0 mr-md-auto font-weight-normal ">
-				 <a href="{{url('')}}">
-				<img src="{{ url('img/icons/logo.svg')}}" alt="Just Home logo" class="px-2 pb-2 c-immo-card__symbol">
-				JustHome
-            </a>
+				<a href="{{url('')}}">
+					<img src="{{ url('img/icons/logo.svg')}}" alt="Just Home logo" class="px-2 pb-2 c-immo-card__symbol">
+					JustHome
+				</a>
 			</h1>
+			{% set navItems = craft.entries.section('navigationLinks').all() %}
 			<nav class="my-2 my-md-0 mr-md-3 nav nav-underline">
-				<a class="px-2  nav-link  text-dark" href="#">Homes</a>
-				<a class="px-2 nav-link text-dark " href="#">Categories</a>
-				<a class="px-2 nav-link text-dark " href="#">Locations</a>
+				{% for item in navItems %}
+					<a class="px-2 nav-link text-dark" href="{{item.navLink}}">{{item.title}}</a>
+				{% endfor %}
 			</nav>
 		</div>
 
-{% block main %}
-
-{% endblock %}
+		{% block main %}{% endblock %}
 
 		<!-- footer -->
 		<div class="container-fluid u-background-grey  ">
@@ -44,10 +43,11 @@
 						</h1>
 					</div>
 					<div class="col-12 col-sm-4 col-md-3 c-footer__item  text-center">
+						{% set navItems = craft.entries.section('navigationLinks').all() %}
 						<nav class="my-2 my-md-0 mr-md-3 nav nav-underline c-footer__nav">
-							<a class="px-2  nav-link  text-dark" href="#">Homes</a>
-							<a class="px-2 nav-link text-dark " href="#">Categories</a>
-							<a class="px-2 nav-link text-dark " href="#">Locations</a>
+							{% for item in navItems %}
+								<a class="px-2 nav-link text-dark" href="{{item.navLink}}">{{item.title}}</a>
+							{% endfor %}
 						</nav>
 					</div>
 					<div class="col-12 col-sm-4 col-md-3 c-footer__item ">

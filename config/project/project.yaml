@@ -1,4 +1,4 @@
-dateModified: 1732265985
+dateModified: 1732268694
 email:
   fromEmail: voornaam.naam@howest.be
   fromName: 'Craft Template'
@@ -25,15 +25,18 @@ meta:
     113d5bf0-c24d-41e4-ab4b-667cabd23c35: City # City
     955b3b78-0dbd-47ac-9db5-c15151bf0b94: Details # Details
     1094b8b3-5e0b-4264-b997-5e1e4110a127: House # House
+    8039b83d-a753-40d8-a665-44b50602ab9a: 'Navigation Items' # Navigation Items
     19178fcc-602e-4e2e-a2a4-abf44f2ec6a3: House # House
     1765228e-0ad3-49c0-a7df-f552ada1e942: State # State
     40545066-45f8-471c-aa52-c739f2f4516b: Category # Category
     a3917b41-5b9e-455d-82b1-9867d010e228: 'Body Text' # Body Text
     b46e2b3f-63f3-489e-af5b-b1d13b911242: Categories # Categories
     bfc5caff-33ac-495a-8336-7abe2887b021: 'Public Schema' # Public Schema
+    c07dd81f-5aba-43cb-94ad-04c2f6b4360e: 'Nav Link' # Nav Link
     d3b42bd7-e7fb-4536-8773-1f5957362b49: Price # Price
     d322c3bd-0f2b-4e2d-8c86-84c361a98097: Carousel # Carousel
     e2e222ba-6107-4ebe-ba6f-c26cc3a40dd8: 'Plain Text' # Plain Text
+    ee0ea216-74e8-4570-b028-52aea1b97959: 'Navigation Links' # Navigation Links
     f6eaef1f-2f88-4856-8eee-c5ae9620f572: 'Craft Template' # Craft Template
 plugins:
   ckeditor:
