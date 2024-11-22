@@ -26,7 +26,6 @@
 	</div>
 
 	<!-- Categories section -->
-
 	<div class="container-fluid c-section ">
 		<div class="c-categories">
 			{% set allCategories = craft.entries.section('categories').level(1).one() %}
@@ -118,118 +117,26 @@
 
 	<!-- locations -->
 	<div class="container c-section">
-		<h2 class="c-section__title">Locations</h2>
-		<p class="c-section__subtitle">Already found your ideal location?</p>
+		{% set allLocations = craft.entries.section('locations').level(1).one() %}
+		<h2 class="c-section__title">{{allLocations.title}}</h2>
+		<p class="c-section__subtitle">{{allLocations.subText}}</p>
 
-
-		<div
-			class="row justify-content-center c-section__content c-locations text-center">
-			<!-- todo: plak hier de categories vanuit templates/categories/index.twig -->
-			<div class="col-12 col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class=" c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class=" c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Kortrijk
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Brussel
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Lokeren
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-12 col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Antwerpen
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="u-hidden col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="u-hidden col-sm-3 col-lg-2">
-				<ul class="c-locations__list">
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-					<li class="c-locations__list-item pb-2">
-
-						<a class="c-locations__link " href="#">
-							Gent
-						</a>
-					</li>
-				</ul>
-			</div>
-
+		<div class="row justify-content-center c-section__content c-locations text-center">
+			{% set regions = allLocations.children.all() %}
+			{% for region in regions %}
+				<div class="col-12 col-sm-3 col-lg-2">
+					<ul class="c-locations__list">
+						<h3>{{region.title}}</h3>
+						{%for item in region.children.all() %}
+							<li class=" c-locations__list-item pb-2">
+								<a class="c-locations__link " href="{{url(item.uri)}}">
+									{{item.title}}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endfor %}
 		</div>
 
 	</div>
@@ -252,10 +159,10 @@
 					</div>
 					<p>
 						Searches for multiplexes, property comparisons,
-																																																																																																																																																																																							and the loan estimator. Works great. Lorem
-																																																																																																																																																																																							ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																							sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																							dores.
+																																																																																																																																																																																																																																																			and the loan estimator. Works great. Lorem
+																																																																																																																																																																																																																																																			ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																																																																																																																																																																																			sed do eiusmod tempor incididunt ut labore et
+																																																																																																																																																																																																																																																			dores.
 					</p>
 
 				</div>
@@ -271,10 +178,10 @@
 					</div>
 					<p>
 						Searches for multiplexes, property comparisons,
-																																																																																																																																																																																							and the loan estimator. Works great. Lorem
-																																																																																																																																																																																							ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																							sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																							dores.
+																																																																																																																																																																																																																																																			and the loan estimator. Works great. Lorem
+																																																																																																																																																																																																																																																			ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																																																																																																																																																																																			sed do eiusmod tempor incididunt ut labore et
+																																																																																																																																																																																																																																																			dores.
 					</p>
 
 				</div>
@@ -290,10 +197,10 @@
 					</div>
 					<p>
 						Searches for multiplexes, property comparisons,
-																																																																																																																																																																																							and the loan estimator. Works great. Lorem
-																																																																																																																																																																																							ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																																																																																																																																							sed do eiusmod tempor incididunt ut labore et
-																																																																																																																																																																																							dores.
+																																																																																																																																																																																																																																																			and the loan estimator. Works great. Lorem
+																																																																																																																																																																																																																																																			ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																																																																																																																																																																																			sed do eiusmod tempor incididunt ut labore et
+																																																																																																																																																																																																																																																			dores.
 					</p>
 
 				</div>
