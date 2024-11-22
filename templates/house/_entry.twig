@@ -48,21 +48,22 @@
 				<div
 					class="d-flex flex-row gap-2">
 					<!-- todo: voeg de category toe zorg dat deze ook linkt naar het overzicht van deze specifieke category -->
+					{% set category = craft.entries.section('categories').relatedTo(entry).one() %}
 					<p>
-						<a class="c-detail__tag" href="#">Apartment</a>
+						<a class="c-detail__tag" href="{{url(category.uri)}}">{{ category.title }}</a>
 					</p>
 					<p>
 						<a class="c-detail__tag {% if(entry.state == 'sale') %} c-detail__tag--sale{% else %}c-detail__tag--rent{% endif %}" href="#">For
 							{{entry.state}}</a>
 					</p>
 				</div>
-
+				{% set city = craft.entries.section('locations').relatedTo(entry).one() %}
 				<div class="c-detail__location">
-					<img src="{{url('img/icons/location.svg')}}" alt="">
+					<img src="{{url('img/icons/location.svg')}}" alt="{{city.title}}">
 					<p>
 						{{entry.location}},
-						<a class="u-underline" href="#">
-							{{entry.city}}</a>
+						<a class="u-underline" href="{{url(city.uri)}}">
+							{{city.title}}</a>
 					</p>
 
 				</div>
@@ -130,10 +131,8 @@
 		<p class="c-section__subtitle">Based on your interests.</p>
 
 
-		<div
-			class="row g-3 justify-content-center c-section__content">
-			<!-- todo: Zorg dat de cards hier enkel huizen toont die gerelateerd zijn aan de category van de detail pagina. -->
-			{% set houses = craft.entries.section('house').relatedTo(entry.location) %}
+		<div class="row g-3 justify-content-center c-section__content">
+			{% set houses = craft.entries.section('house').relatedTo(category) %}
 			<!-- immo card -->
 			{% for house in houses %}
 				<!-- immo card -->
