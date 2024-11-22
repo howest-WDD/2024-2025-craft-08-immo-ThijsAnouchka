@@ -1,4 +1,4 @@
-dateModified: 1732263629
+dateModified: 1732264981
 email:
   fromEmail: voornaam.naam@howest.be
   fromName: 'Craft Template'
@@ -13,6 +13,7 @@ fs:
     url: '@web/local'
 meta:
   __names__:
+    003faa4d-7f9a-4a07-a484-4814edfd3d70: Categories # Categories
     5d45f9f4-7ab7-4459-926d-a8006cad4227: Images # Images
     6b361ab3-be7b-405a-9c8f-cbc2a6b667be: 'List Item' # List Item
     7dbeeeeb-e4fd-4255-976b-33b297fe68d9: Strengths # Strengths
@@ -23,7 +24,9 @@ meta:
     1094b8b3-5e0b-4264-b997-5e1e4110a127: House # House
     19178fcc-602e-4e2e-a2a4-abf44f2ec6a3: House # House
     1765228e-0ad3-49c0-a7df-f552ada1e942: State # State
+    40545066-45f8-471c-aa52-c739f2f4516b: Category # Category
     a3917b41-5b9e-455d-82b1-9867d010e228: 'Body Text' # Body Text
+    b46e2b3f-63f3-489e-af5b-b1d13b911242: Categories # Categories
     bfc5caff-33ac-495a-8336-7abe2887b021: 'Public Schema' # Public Schema
     d3b42bd7-e7fb-4536-8773-1f5957362b49: Price # Price
     d322c3bd-0f2b-4e2d-8c86-84c361a98097: Carousel # Carousel

@@ -1,0 +1,24 @@
+columnSuffix: null
+handle: category
+instructions: null
+name: Category
+searchable: false
+settings:
+  maxLength: 255
+  showLabelField: false
+  showTargetField: false
+  typeSettings:
+    __assoc__:
+      -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              -
+                - 'section:003faa4d-7f9a-4a07-a484-4814edfd3d70' # Categories
+  types:
+    - entry
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Link
