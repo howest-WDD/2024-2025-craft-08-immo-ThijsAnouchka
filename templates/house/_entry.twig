@@ -1,6 +1,8 @@
 {% extends '_shared/_layout.twig' %}
 
 {% block main %}
+	{% set category = craft.entries.section('categories').relatedTo(entry).one() %}
+	{% set city = craft.entries.section('locations').relatedTo(entry).one() %}
 
 	<div class="container col-12 col-sm-10 col-md-10">
 		<nav aria-label="breadcrumb">
@@ -9,7 +11,7 @@
 					<a href="../index.twig">Home</a>
 				</li>
 				<li class="breadcrumb-item">
-					<a href="#">Apartments</a>
+					<a href="{{url(category.uri)}}">{{category.title}}</a>
 				</li>
 				<li class="breadcrumb-item active" aria-current="page">{{entry.title}}
 				</li>
@@ -48,7 +50,6 @@
 				<div
 					class="d-flex flex-row gap-2">
 					<!-- todo: voeg de category toe zorg dat deze ook linkt naar het overzicht van deze specifieke category -->
-					{% set category = craft.entries.section('categories').relatedTo(entry).one() %}
 					<p>
 						<a class="c-detail__tag" href="{{url(category.uri)}}">{{ category.title }}</a>
 					</p>
@@ -57,7 +58,6 @@
 							{{entry.state}}</a>
 					</p>
 				</div>
-				{% set city = craft.entries.section('locations').relatedTo(entry).one() %}
 				<div class="c-detail__location">
 					<img src="{{url('img/icons/location.svg')}}" alt="{{city.title}}">
 					<p>
