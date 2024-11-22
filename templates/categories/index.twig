@@ -17,7 +17,9 @@
 					<a href="{{url(item.uri)}}" class="c-categories__card col-12 col-sm-3 col-lg-2">
 						<div class="c-categories__info">
 							<h3 class="c-categories__title">{{item.title}}</h3>
-							<p class="">2 properties</p>
+							{% set houses = craft.entries.section('house').relatedTo(item) %}
+							<p class="">{{houses|length}}
+								properties</p>
 						</div>
 						<div class="c-categories__imgcontainer">
 							<img src="{{item.cover.one().getUrl()}}" alt="{{item.title}}" class="c-categories__img">

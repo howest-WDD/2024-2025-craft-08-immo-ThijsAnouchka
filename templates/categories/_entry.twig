@@ -1,6 +1,7 @@
 {% extends '_shared/_layout.twig' %}
 
 {% block main %}
+{% set houses = craft.entries.section('house').relatedTo(entry) %}
 
 <!-- Homes for you -->
 <div class="container c-section ">
@@ -13,14 +14,14 @@
 		<div class="col-12 col-sm-6 col-lg-4 c-categories__card">
 			<div class="c-categories__info">
 				<h3 class="c-categories__title">{{entry.title}}</h3>
-				<p class="">10 properties</p>
+				<p class="">{{houses|length}}
+					properties</p>
 			</div>
 			<div class="c-categories__imgcontainer">
 				<img src="{{entry.cover.one().getUrl()}}" alt="{{entry.title}}" class="c-categories__img c-categories__img--page">
 			</div>
 		</div>
 
-		{% set houses = craft.entries.section('house').relatedTo(entry) %}
 		{% for house in houses %}
 			<!-- immo card -->
 			<div class="col-12 col-sm-6 col-lg-4 ">
