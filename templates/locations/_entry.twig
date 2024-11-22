@@ -1,6 +1,7 @@
 {% extends '_shared/_layout.twig' %}
 
 {% block main %}
+	{{ craft.vite.register('src/js/overview.js', false)}}
 
 	<!-- city page -->
 	<div class="container c-section ">
@@ -13,7 +14,7 @@
 			{% for house in houses %}
 				<!-- immo card -->
 				<div class="col-12 col-sm-6 col-lg-4 ">
-					<a href="{{url(house.uri)}}" class="c-immo-card">
+					<a href="{{url(house.uri)}}" class="c-immo-card js-immo-location" data-lat="{{ house.address.lat}}" data-long="{{ house.address.lng }}">
 						<div class="c-immo-card__imgcontainer">
 							<img src={{house.cover.one().url()}} alt="" class="c-immo-card__img">
 							<div class="c-immo-card__tag {% if(house.state == 'sale') %} c-immo-card__tag--sale{% else %}c-immo-card__tag--rent{% endif %}">
@@ -34,6 +35,7 @@
 									{{house.location}}
 								</p>
 							</div>
+
 
 							{% for row in house.details %}
 								<div class="c-immo-card__details">

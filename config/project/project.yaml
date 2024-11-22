@@ -1,4 +1,4 @@
-dateModified: 1732270951
+dateModified: 1732272250
 email:
   fromEmail: voornaam.naam@howest.be
   fromName: 'Craft Template'
@@ -43,6 +43,7 @@ meta:
     ee0ea216-74e8-4570-b028-52aea1b97959: 'Navigation Links' # Navigation Links
     f6eaef1f-2f88-4856-8eee-c5ae9620f572: 'Craft Template' # Craft Template
     f961de11-bb5a-455e-993a-dd5d958a7976: Realtors # Realtors
+    f80513f3-74f1-497e-a9a1-6d60e2a614b0: Address # Address
 plugins:
   ckeditor:
     edition: standard
@@ -54,7 +55,7 @@ plugins:
     licenseKey: 1BSVCOKVC73SOO1TXMY1W4S4
     schemaVersion: 1.1.0
     settings:
-      accessToken: null
+      accessToken: $VITE_SECRET_KEY_MAPBOX
       enableJsLogging: true
       minifyJsFiles: false
   vite:
