@@ -1,4 +1,4 @@
-dateModified: 1732270425
+dateModified: 1732270951
 email:
   fromEmail: voornaam.naam@howest.be
   fromName: 'Craft Template'
@@ -19,6 +19,7 @@ meta:
     6b361ab3-be7b-405a-9c8f-cbc2a6b667be: 'List Item' # List Item
     7dbeeeeb-e4fd-4255-976b-33b297fe68d9: Strengths # Strengths
     10d2260b-dd05-4a49-abb3-800017e15928: 'Craft Template' # Craft Template
+    13e674f9-d0ff-4a9b-9fd5-a950dba7dc3c: Reviews # Reviews
     21d6f9ae-1d22-490e-bd89-d6ded5d514ac: 'body text' # body text
     35c35080-108d-485f-925f-407a5ab65a22: Cover # Cover
     72bd551d-db9d-4026-9ca2-c0038f5a5a50: Locations # Locations
@@ -28,6 +29,7 @@ meta:
     1094b8b3-5e0b-4264-b997-5e1e4110a127: House # House
     8039b83d-a753-40d8-a665-44b50602ab9a: 'Navigation Items' # Navigation Items
     19178fcc-602e-4e2e-a2a4-abf44f2ec6a3: House # House
+    42180f39-0a1c-49f7-ba78-f5987f7fde93: Reviews # Reviews
     1765228e-0ad3-49c0-a7df-f552ada1e942: State # State
     40545066-45f8-471c-aa52-c739f2f4516b: Category # Category
     a3917b41-5b9e-455d-82b1-9867d010e228: 'Body Text' # Body Text

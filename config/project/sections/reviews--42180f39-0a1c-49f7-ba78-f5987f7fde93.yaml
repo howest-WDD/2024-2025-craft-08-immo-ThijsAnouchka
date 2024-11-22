@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 85a2f67f-9e65-4efc-8c73-ee92858f291a # Realtors
-handle: realtors
+  - 13e674f9-d0ff-4a9b-9fd5-a950dba7dc3c # Reviews
+handle: reviews
 maxAuthors: 1
-name: Realtors
+name: Reviews
 previewTargets:
   -
     __assoc__:
